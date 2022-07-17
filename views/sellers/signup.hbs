@@ -1,0 +1,47 @@
+<div class="container  " style="height:100vh ;">
+    <div class="row">
+        <div class="text-center card  border-0   " style=" height:100mv ;">
+            <form method="POST" action="/sellers/signup" style=" max-width: 20rem; margin: auto "
+                class="form-control border-0   mt-5 pt-5  " id="sellerSignup">
+                <h1 class="h3 opacity-75 mb-5 mt-3">Create Account</h1>
+                {{#if sellerExists}}
+                <p class="text-danger">Username Already Exists</p>
+                {{/if}}
+                <input type="text" class="form-control mt-3" placeholder="UserName" autofocus required name="username">
+                <input type="email" class="form-control mt-3" placeholder="Email" autofocus required name="email">
+                <input type="tel" pattern="\d{10}" class="form-control mt-3 mb-3" placeholder="Phone Number" autofocus
+                    required name="ph_number">
+                <!-- Default radio -->
+
+                <!-- Default checked radio -->
+
+
+
+                <div>
+                    <input type="password" class="form-control mt-3" placeholder="Password" autofocus required
+                        name="password" id="password">
+                    <label for="password" class="d-lg-none">password</label>
+                    <span id=''></span>
+
+                </div>
+                <div>
+                    <input type="password" class="form-control mt-3" placeholder=" Confirm Password" autofocus required
+                        name="cpassword" id="confirm_password">
+                    <label for="confirm_password" class="d-lg-none">confirm password</label>
+                    <span id='message'></span>
+
+                </div>
+                <p id="password_mismatch"></p>
+                <div class="mt-3">
+                    <button class="btn btn-secondary button btn-block  rounded-pill mb-3 mt-3 mx-auto" style="width:12rem ;"
+                        type="submit">SignUp</button>
+
+                    </button>
+                </div class="mt-4 ">
+                <a href="/sellers/login" class="mb-4 text-secondary">Already Have an account? Login Here</a>
+            </form>
+
+        </div>
+         
+    </div>
+</div>

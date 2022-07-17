@@ -1,0 +1,31 @@
+<div class="container">
+    <p class="fs-4 fw-bold">My Wishlist</p>
+
+            <div class="row ">
+                {{#each wishlist}}
+                <div class="col-sm-6 col-md-3 ">
+                    <div class="product-grid ">
+                        <div class="product-image ">
+                            <a href="/product/details/{{this.productId}}" class="image ">
+                                <img src="/product-images/{{this.productId}}(1).jpg" class="rounded-lg ">
+                            </a>
+                            <ul class="product-links">
+                                <a href="" onclick="deleteFromWishlist('{{this.w_id}}')"> <li><i class="fa fa-times" aria-hidden="true"></i></a></li>
+                             </ul>
+                            {{!-- <a href="" class="add-to-cart ">Add to Cart</a> --}}
+                        </div>
+                        <div class="product-content ">
+                            <h6 class="title fs-6 fw-bold float-start p-0"><a class="text-dark"
+                                    href="#">{{this.brandName}}</a></h6><br>
+                            <div >
+                                <p class="title  "><a class="text-dark " href="#">{{this.title}}</a></p>
+
+                            </div>
+                            <div class="price text-center">${{this.price}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        

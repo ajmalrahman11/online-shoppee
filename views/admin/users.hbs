@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <table class="table table-hover" id="userTable">
+        {{!-- <caption> users</caption> --}}
+        <thead>
+            <tr>
+                <th scope="col">N0.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                {{!-- <th scope="col">Edit</th> --}}
+                <th scope="col">Delete</th>
+                <th scope="col">Action</th>
+
+
+                {{!-- <th scope="col">Description</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.username}}</td>
+                <td>{{this.email}}</td>
+                {{!-- <td>{{this.description}}</td> --}}
+                {{!-- <td><img src="/product-images/{{this._id}}.jpg" alt="pic" width="100"></td> --}}
+                {{!-- <td><a href="/edit-user/{{this._id}}" class="btn btn-primary">Edit</a> </td> --}}
+                <td><a href="/admin/user/delete?id={{this._id}}" class="btn btn-danger"
+                        onclick="return confirm('Delete {{this.username}} ? ')">Delete Account</a> </td>
+                {{!-- <td><a class="btn btn-danger" href="">Block</a> </td> --}}
+                {{#if this.isActive}}
+                <td><a href="/admin/block-user?id={{this._id}}" class="btn btn-danger"
+                        onclick="return confirm('Block {{this.username}} ? ')">Block Account</a> </td>
+                {{else}}
+                <td><a href="/admin/unblock-user?id={{this._id}}" class="btn btn-primary"
+                        onclick="return confirm('Unblock {{this.username}} ? ')">UnBlock </a> </td>
+                {{/if}}
+            </tr>
+
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#userTable');
+    });
+</script>

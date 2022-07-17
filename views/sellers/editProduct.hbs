@@ -1,0 +1,356 @@
+<section class=" container card shadow ">
+    <form action="/sellers/product/edit/{{product.products._id}}" method="POST" enctype="multipart/form-data">
+        {{!-- --}}
+        <div class="row  ">
+
+            <div class="col-12 col-md-8 float-start">
+                <div class="row">
+                    <div class="">
+
+                        <div class="  pb-3">
+                            {{!-- <p class="fs-6 opacity-75 me-5 pt-1">Brand Name</p> --}}
+                            <label for="brandName">Brand Name</label>
+                            <input type="text" class="form-control" id="brandName"
+                                value="{{product.products.brandName}}" style="max-width: 50%;" name="brandName">
+                        </div>
+
+                        <div>
+                            {{!-- <p class="fs-6 mt-3">TITLE</p> --}}
+                            <label for="title">TITLE</label>
+                            <input type="text" value="{{product.products.title}}" class="form-control" id="title"
+                                name="title" style="max-width: 50%;">
+                        </div>
+
+
+                        {{!-- <p class="fs-5 opacity-75">{{product.products.price}}</p> --}}
+                        <label for="price" class="mt-3">Price</label>
+                        <input type="text" value="{{product.products.price}}" id="price" name="price"
+                            class="form-control " style="max-width: 50%;">
+
+                        {{!-- <p class="fs-6  mt-3">{{product.products.gender}}</p> --}}
+                        <label for="gender" class="mt-3">{{product.products.gender}}</label>
+                        <select id="g" onchange="show()" class="form-select opacity-75 rounded"
+                            aria-label="Default select example" name="gender" style="max-width: 50%;" id="gender">
+                            <option value="{{product.products.gender}}" selected>{{product.products.gender}} </option>
+                            <option value="men" name="men">Men</option>
+                            <option value="women">Women</option>
+                            <option value="menWomen">Men & Women</option>
+                            <option value="boys">Boys</option>
+                            <option value="girls">Girls</option>
+                            <option value="boysGirls">Boys & Girls</option>
+                        </select>
+
+                        <div class=" ">
+
+                            <p class="fs-6 opacity-75">Category :{{product.products.category}} </p>
+                            {{!-- <label for="category" class="mt-3">Category</label>
+                            <input type="text" value="{{product.products.category}}" id="category" name="category"
+                                class="form-control " style="max-width: 50%;"> --}}
+
+                            <select class="form-select opacity-75 rounded" aria-label="Default select example"
+                                name="category" style="max-width: 50%;">
+                                <option value="selected">Select </option>
+                                <option value="tShirts">T-Shirts</option>
+                                <option value="casualShirts">Casual Shirts</option>
+                                <option value="formaTrousers">Formal Trousers</option>
+                                <option value="shorts">Shorts</option>
+                                <option value="kurtas">Kurtas</option>
+                                <option value="sarees">Sarees</option>
+                                <option value="sarees">Ethnic Wear</option>
+                                <option value="sarees">Leggings</option>
+                                <option value="sarees">Skirts</option>
+                                <option value="sarees">Lehangas</option>
+                                <option value="sarees">Shawls</option>
+                                <option value="sarees">Tops</option>
+                                <option value="sarees">PartyWear</option>
+                                <option value="sarees">NightWear</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+
+                        </div>
+                        {{!-- <p class="fs-6 opacity-75">Total Stock</p> --}}
+                        <p class="fs-6 opacity-75">Stock </p>
+                        <div class="d-flex">
+
+
+                            <div id="preview">
+
+                                <div class="row ">
+                                    <div class="col-2  ">
+                                        <input type="number" class="col-12" value="{{product.products.quantity.xs}}">
+                                    </div>
+                                    <div class="col-2 ">
+                                        <input type="text" class="col-12" value="{{product.products.quantity.s}}">
+                                    </div>
+                                    <div class="col-2  ">
+                                        <input type="text" class="col-12" value="{{product.products.quantity.m}}">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-2  ">
+                                        <input type="text" class="col-12" value="{{product.products.quantity.l}}">
+                                    </div>
+                                    <div class="col-2  ">
+                                        <input type="text" class="col-12" value="{{product.products.quantity.xl}}">
+                                    </div>
+                                    <div class="col-2  ">
+                                        <input type="text" class="col-12" value="{{product.products.quantity.xxl}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div id="adults" style="display:none;">
+                            <div class="row">
+                                <div class="col-4  ">
+                                    <input type="number" placeholder="XS" name="xs" class="col-12"
+                                        value="{{product.products.quantity.xs}}">
+                                </div>
+                                <div class="col-4 ">
+                                    <input type="text" placeholder="S" name="s" class="col-12"
+                                        value="{{product.products.quantity.s}}">
+                                </div>
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="M" name="m" class="col-12"
+                                        value="{{product.products.quantity.m}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="L" name="l" class="col-12"
+                                        value="{{product.products.quantity.l}}">
+                                </div>
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="XL" name="xl" class="col-12"
+                                        value="{{product.products.quantity.xl}}">
+                                </div>
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="XXL" name="xxl" class="col-12"
+                                        value="{{product.products.quantity.xxl}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="kids" style="display:none;">
+                            <div class="row ">
+                                <div class="col-4  ">
+                                    <input type="number" placeholder="3-4 Y" name="kxs" class="col-12">
+                                </div>
+                                <div class="col-4 ">
+                                    <input type="text" placeholder="5-6 Y" name="ks" class="col-12">
+                                </div>
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="7-8 Y" name="km" class="col-12">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="9-10 Y" name="kl" class="col-12">
+                                </div>
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="11-12 Y" name="kxl" class="col-12">
+                                </div>
+                                <div class="col-4  ">
+                                    <input type="text" placeholder="13-14 Y" name="kxxl" class="col-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div class=" container d-flex mx-auto row m">
+
+                    <div class="col-sm-6 col-md-4 ">
+                        <p><input type="file" accept="image/*" name="image1" id="file1" onchange="loadFile1(event)"
+                                class="form-control">
+                        </p>
+                        <p><label for="file1" style="cursor: pointer;">
+                                <img src="/product-images/{{product.products._id}}(1).jpg" alt="" id="output1"
+                                    width="150">
+                            </label></p>
+                        <div class="d-flex ">
+                            <p><img width="200" /></p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 col-md-4 ">
+                        <p><input type="file" accept="image/*" name="image2" id="file2" onchange="loadFile2(event)"
+                                class="form-control">
+                        </p>
+                        <p><label for="file2" style="cursor: pointer;"><img
+                                    src="/product-images/{{product.products._id}}(2).jpg" alt="" id="output2"
+                                    width="150">
+                            </label></p>
+                        <div class="d-flex ">
+                            <p><img width="200" /></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 ">
+                        <p><input type="file" accept="image/*" name="image3" id="file3" onchange="loadFile3(event)"
+                                class="form-control">
+                        </p>
+                        <p><label for="file3" style="cursor: pointer;"><img
+                                    src="/product-images/{{product.products._id}}(3).jpg" alt="" id="output3"
+                                    width="150">
+                            </label></p>
+                        <div class="d-flex ">
+                            <p><img width="200" /></p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" container d-flex row ">
+
+                    <div class="col-sm-6 col-md-4 ">
+                        <p><input type="file" accept="image/*" name="image4" id="file4" onchange="loadFile4(event)"
+                                class="form-control">
+                        </p>
+                        <p><label for="file4" style="cursor: pointer;"><img
+                                    src="/product-images/{{product.products._id}}(4).jpg" alt="" id="output4"
+                                    width="150">
+                            </label></p>
+                        <div class="d-flex ">
+                            <p><img width="200" /></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 ">
+                        <p><input type="file" accept="image/*" name="image5" id="file5" onchange="loadFile5(event)"
+                                class="form-control">
+                        </p>
+                        <p><label for="file5" style="cursor: pointer;"><img
+                                    src="/product-images/{{product.products._id}}(5).jpg" alt="" id="output5"
+                                    width="150">
+                            </label></p>
+                        <div class="d-flex ">
+                            <p><img width="200" /></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 ">
+                        <p><input type="file" accept="image/*" name="image6" id="file6" onchange="loadFile6(event)"
+                                class="form-control">
+                        </p>
+                        <p><label for="file6" style="cursor: pointer;"><img
+                                    src="/product-images/{{product.products._id}}(6).jpg" alt="" id="output6"
+                                    width="150">
+                            </label></p>
+                        <div class="d-flex ">
+                            <p><img width="200" /></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="5"
+                class="form-control">{{product.products.description}}</textarea>
+
+        </div>
+        <div class="container mb-5">
+            <label for="tags">tags</label>
+            <textarea name="tags" id="tags" cols="30" rows="5"
+                class="form-control">{{product.products.tags}}</textarea>
+
+        </div>
+        <input type="submit" class="btn btn-primary mb-5" value="UPDATE">
+    </form>
+</section>
+<script>
+    var MainImg = document.getElementById('MainImg');
+    var smallimg = document.getElementsByClassName('small-img');
+    smallimg[0].onclick = function () {
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function () {
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function () {
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function () {
+        MainImg.src = smallimg[3].src;
+    }
+    smallimg[4].onclick = function () {
+        MainImg.src = smallimg[4].src;
+    }
+    smallimg[5].onclick = function () {
+        MainImg.src = smallimg[5].src;
+    }
+
+
+
+
+
+
+    function show() {
+        let x = document.getElementById("g").value
+        let adults = document.getElementById('adults');
+        let kids = document.getElementById("kids");
+        let preview = document.getElementById("preview");
+
+
+        if (x === "men" || x === "women" || x === "menWomen") {
+
+            kids.style.display = 'none'
+            preview.style.display = 'none'
+            adults.style.display = 'block'
+
+        } else {
+            adults.style.display = 'none'
+            kids.style.display = 'block'
+            preview.style.display = 'none'
+
+        }
+        console.log(x)
+    }
+
+
+
+    var loadFile1 = function (event) {
+        var image = document.getElementById('output1');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    var loadFile2 = function (event) {
+        var image = document.getElementById('output2');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    var loadFile3 = function (event) {
+        var image = document.getElementById('output3');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    var loadFile4 = function (event) {
+        var image = document.getElementById('output4');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    var loadFile5 = function (event) {
+        var image = document.getElementById('output5');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    var loadFile6 = function (event) {
+        var image = document.getElementById('output6');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+</script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://kit.fontawesome.com/d46ab11f99.js" crossorigin="anonymous"></script>

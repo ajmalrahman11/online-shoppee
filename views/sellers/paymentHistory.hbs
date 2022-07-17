@@ -1,0 +1,40 @@
+<div class="container mt-5 shadow">
+    <table class="table table-hover  " id="sellersTable">
+        {{!-- <caption> users</caption> --}}
+        <thead>
+            <tr>
+                {{!-- <th scope="col">N</th> --}}
+                <th scope="col"> </th>
+                <th scope="col"> </th>
+                {{!-- <th scope="col">Requested Time</th> --}}
+                <th scope="col"> </th>
+                {{!-- <th scope="col"></th> --}}
+
+
+                {{!-- <th scope="col">Description</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each history.redeemRequests}}
+            
+            <tr>
+                {{!-- <th scope="row">{{@index}}</th> --}}
+                <td><p>Date :</p> <p>{{this.paidOn}}</p></a></td>
+                {{!-- <td><a href="/admin/seller/Details/view/{{this.sellerId}}"><p class="fw-bold">{{this.sellerName}}</p></a></td> --}}
+                <td><p>Payment ID :</p><p>{{this.paymentId}}</p></td>
+                <td><p>Amount :</p><p class="fw-bold"> {{this.amount}}</p></td>
+
+
+                {{!-- <td><a href="/admin/seller/payment?id={{this.sellerId}}&amount={{this.amount}}&requestId={{this.requestId}}" class="text-success fw-bold"
+                        onclick="return confirm('Please Confirm   ')"><p class="text-success fw-bold">Pay Now</p></a> </td> --}}
+            </tr>
+             {{/each}}
+        </tbody>
+
+    </table>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#sellersTable');
+    });
+</script>

@@ -1,0 +1,157 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top  py-0 ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images1/logo-black.png" style="width: 10rem;" alt=""> </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="nav-link active text-dark ms-lg-5   mt-1" aria-current="page" href="/">HOME</a>
+            {{!-- <a class="nav-link active text-dark ms-lg-5  mt-1 men" aria-current="page"
+                href="/searchGender/men">MEN</a> --}}
+
+            <div class="dropdown">
+                {{!-- <button class="dropbtn">Dropdown</button> --}}
+                <button class="dropbtn"> <a class="nav-link active text-dark ms-lg-5  mt-1 men" aria-current="page"
+                        href="/searchGender/men">MEN</a>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="/searchcategory/tShirts">T Shirts</a>
+                    <a href="/searchcategory/casualShirts">Casual Shirts</a>
+                    <a href="/searchcategory/Formalshirts">Formal Shirts</a>
+                    <a href="/searchcategory/jeans">Jeans</a>
+                    <a href="/searchcategory/casualTrousers">Casual Trousers</a>
+                    <a href="/searchcategory/formalTrousers">Formal Trousers</a>
+                    <a href="/searchcategory/shorts">Shorts</a>
+                    <a href="/searchcategory/kurtas">Kurtas</a>
+                    <a href="/searchcategory/ethnicwears">Ethnic Wear</a>
+                    <a href="/searchcategory/partywear">PartyWear</a>
+
+
+
+                </div>
+            </div>
+
+
+
+            <div class="dropdown2">
+                {{!-- <button class="dropbtn">Dropdown</button> --}}
+                <button class="women"> <a class="nav-link active text-dark ms-lg-5  mt-1 women" aria-current="page"
+                        href="/searchGender/women">WOMEN</a>
+                </button>
+
+                <div class="dropdown-content2">
+                    <a href="/searchcategory/sarees">Sarees</a>
+                    <a href="/searchcategory/ethnicwears">EthnicWear</a>
+                    <a href="/searchcategory/tShirts">T-Shirts</a>
+                    <a href="/searchcategory/ethnicwears">Ethnic Wear</a>
+                    <a href="/searchcategory/leggings">Leggings</a>
+                    <a href="/searchcategory/skirts">Skirts</a>
+                    <a href="/searchcategory/lehangas">Lehangas</a>
+                    <a href="/searchcategory/shawls">Shawls</a>
+                    <a href="/searchcategory/tops">Tops</a>
+                    <a href="/searchcategory/partyWear">PartyWear</a>
+
+                </div>
+            </div>
+
+            {{!-- <input type="button" name="" id="" class="btn  mt-1" value=MEN> --}}
+            {{!-- <button style="border:none ; background:none" class="mt-1 ms-2" onclick="gender(" men")">MEN</button>
+            --}}
+
+
+            {{!-- <button style="border:none ; background:none" class="mt-1 ms-2" onclick="gender("
+                women")">WOMEN</button> --}}
+
+            <div class="dropdown2">
+                {{!-- <button class="dropbtn">Dropdown</button> --}}
+                <button class="women"> <a class="nav-link active text-dark ms-lg-5  mt-1 kids" aria-current="page"
+                        href="/searchGender/kids">KIDS</a>
+                </button>
+
+                <div class="dropdown-content2">
+                    <a href="/searchcategory/tShirts">T-Shirts</a>
+                    <a href="/searchcategory/jeans">Jeans</a>
+                    <a href="/searchcategory/shorts">Shorts</a>
+                     <a href="/searchcategory/shirts">Shirts</a>
+                     {{!-- add   shirts  --}}
+                    <a href="/searchcategory/partyWear">PartWear</a>
+                    <a href="/searchcategory/ethnicwears">Ethnic Wear</a>
+                    <a href="/searchcategory/skirts">Skirts</a>
+                </div>
+            </div>
+
+
+
+
+            {{!-- <button style="border:none ; background:none" class="mt-1 ms-2" onclick="gender("
+                women")">KIDS</button> --}}
+
+
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+
+
+                </li>
+                {{#if user}}
+                <li class="nav-item ">
+                </li>
+
+                <li class="nav-item">
+                    {{!-- <a class="nav-link " href="">Orders</a> --}}
+                </li>
+                {{/if}}
+            </ul>
+            <div class="d-lg-flex  ">
+
+                <form class="d-flex me-lg-3 " method="post" action="/search/result">
+                    <input class="form-control me-2 mt-2 mb-2 " type="search" placeholder="Search" aria-label="Search" name="search">
+                    {{!-- <a href=""></a> --}}
+                    <button class="btn rounded mt-2 mb-2 " style="background-color:#c5f08d ;" type="submit"><i
+                            class="fa-solid fa-magnifying-glass fa-lg mt-2 "></i></button>
+                </form>
+                {{#if user}}
+                <a class="nav-link mt-2 text-dark   " href="/orders/view">Orders</a>
+
+                <div class="dropdown mt-1 ">
+                    <a class="nav-link dropdown-toggle text-dark mt-1" href="#" id="navbarDarkDropdownMenuLink"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Account
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark fw-bold" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/account">My Account</a></li>
+
+                        <li><a class="dropdown-item " href="/sellers/signup">Become a seller</a></li>
+                        <li><a class="dropdown-item fw-bold" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+
+
+                <a href="/cart"><button class="btn rounded mt-1"> <i class="fa-solid fa-bag-shopping    fa-xl mt-3 m-3"
+                            width="40"></i>
+                        </i></button></a>
+                <a href="/wishlist " class="link-dark "><button class="btn rounded mt-1 "> <i
+                            class="fa-solid fa-heart fa-xl mt-3 m-3"></i></a>
+                </button>
+                {{else}}
+                <a href="/sellers/signup" class="  text-dark nav-link  mt-2 " style="height: 35px;">BECOME A SELLER</a>
+                <a href="/login" class=" text-dark nav-link  mt-2 " style="height: 35px;">LOGIN</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+
+
+
+</nav>

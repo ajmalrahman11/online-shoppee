@@ -1,0 +1,39 @@
+<div class="container mt-5 shadow">
+     <p class="fs-5">Rejected Sellers</p>
+    <table class="table table-hover  " id="sellersTable">
+        {{!-- <caption> users</caption> --}}
+        <thead>
+            <tr>
+                <th scope="col">N0.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                {{!-- <th scope="col">Edit</th> --}}
+                {{!-- <th scope="col"></th> --}}
+                <th scope="col"></th>
+
+
+                {{!-- <th scope="col">Description</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td><a href="/admin/seller/Details/view/{{this._id}}">{{this.username}}</a></td>
+                <td>{{this.email}}</td>
+                
+                
+                <td><a href="/admin/seller/accept?id={{this._id}}" class="text-Success fw-bold">Accept</a> </td> 
+                
+            </tr>
+
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    let table = new DataTable('#sellersTable');
+});
+</script>

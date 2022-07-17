@@ -1,0 +1,45 @@
+<div class="container mt-5 shadow">
+    <p class="float-end"><a href="/admin/sellers/rejected/list">Rejected Sellers -></a></p>
+    <p class="fs-5">REQUESTS</p>
+    <table class="table table-hover  " id="sellersTable">
+        {{!-- <caption> users</caption> --}}
+        <thead>
+            <tr>
+                <th scope="col">N0.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                {{!-- <th scope="col">Edit</th> --}}
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+
+                {{!-- <th scope="col">Description</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each requests}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td><a href="/admin/seller/Details/view/{{this._id}}"><p>{{this.username}}</p></a></td>
+                <td>{{this.email}}</td>
+                
+                {{!-- <td><a href="/admin/delete-seller?id={{this._id}}" class="text-danger fw-bold"
+                        onclick="return confirm('Are You want to delete {{this.username}} ? ')">Delete Account</a> </td> --}}
+                 {{!-- {{#if this.isActive}} --}}
+                <td><a href="/admin/seller/accept?id={{this._id}}" class="text-Success fw-bold"><p>Accept</p></a> </td> 
+                {{!-- {{else}} --}}
+                <td><a href="/admin/seller/reject?id={{this._id}}" class="text-danger fw-bold"
+                        onclick="return confirm('Reject {{this.username}} ? ')"><p>Reject</p> </a> </td>
+                {{!-- {{/if}} --}}
+            </tr>
+
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    let table = new DataTable('#sellersTable');
+});
+</script>

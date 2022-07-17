@@ -1,0 +1,203 @@
+<p class="fs-2  mb-5 mt-5 text-center">Add New Product </p>
+<div class="col-md-6 col-lg-4 mx-auto shadow" onload="display()">
+
+    <form action="/sellers/product/add" method="POST">
+
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <p class="opacity-75 ">Title</p>
+                </td>
+                <td>
+                    <input type="text" class="form-control rounded" name="title" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="opacity-75">Brand Name</p>
+                </td>
+                <td>
+                    <input type="text" class="form-control rounded" name="brandName" aria-describedby="emailHelp">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="opacity-75">Price</p>
+                </td>
+                <td>
+                    <input type="number" class="form-control rounded" name="price" min="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="opacity-75">Discount(%)</p>
+                </td>
+                <td>
+                    <input type="number" class="form-control rounded" name="discount" min="0" max="100" id="gender">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="opacity-75">Gender</p>
+                </td>
+                <td>
+                    <select id="g" onchange="show()" class="form-select opacity-75 rounded-pill"
+                        aria-label="Default select example" name="gender">
+                        <option value="selected">Select </option>
+                        <option value="men" name="men">Men</option>
+                        <option value="women">Women</option>
+                        {{!-- <option value="menWomen">Men & Women</option> --}}
+                        <option value="kids">Boys</option>
+                        <option value="kids">Girls</option>
+                        {{!-- <option value="boysGirls">Boys & Girls</option> --}}
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="opacity-75">Category</p>
+                </td>
+                <td>
+                    <select   class="form-select opacity-75 rounded" aria-label="Default select example" name="category">
+                        <option value="selected">Select </option>
+                        <option value="tShirts">T-Shirts</option>
+                        <option value="casualShirts">Casual Shirts</option>
+                        <option value="formaTrousers">Formal Trousers</option>
+                        <option value="shorts">Shorts</option>
+                        <option value="kurtas">Kurtas</option>
+                        <option value="sarees">Sarees</option>
+                        <option value="sarees">Ethnic Wear</option>
+                        <option value="sarees">Leggings</option>
+                        <option value="sarees">Skirts</option>
+                        <option value="sarees">Lehangas</option>
+                        <option value="sarees">Shawls</option>
+                        <option value="sarees">Tops</option>
+                        <option value="sarees">PartyWear</option>
+                        <option value="sarees">NightWear</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="opacity-75">Quantity</p>
+                </td>
+                <td>
+                    <div id="preview">
+
+                        <div class="row ">
+                            <div class="col-2  ">
+                                <input type="number" class="col-12">
+                            </div>
+                            <div class="col-2 ">
+                                <input type="text" class="col-12">
+                            </div>
+                            <div class="col-2  ">
+                                <input type="text" class="col-12">
+                            </div>
+                            <div class="col-2  ">
+                                <input type="text" class="col-12">
+                            </div>
+                            <div class="col-2  ">
+                                <input type="text" class="col-12">
+                            </div>
+                            <div class="col-2  ">
+                                <input type="text" class="col-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="adults" style="display:none;">
+                        <div class="row">
+                            <div class="col-4  ">
+                                <input type="number" placeholder="XS" name="xs" class="col-12">
+                            </div>
+                            <div class="col-4 ">
+                                <input type="text" placeholder="S" name="s" class="col-12">
+                            </div>
+                            <div class="col-4  ">
+                                <input type="text" placeholder="M" name="m" class="col-12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4  ">
+                                <input type="text" placeholder="L" name="l" class="col-12">
+                            </div>
+                            <div class="col-4  ">
+                                <input type="text" placeholder="XL" name="xl" class="col-12">
+                            </div>
+                            <div class="col-4  ">
+                                <input type="text" placeholder="XXL" name="xxl" class="col-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="kids" style="display:none;">
+                        <div class="row ">
+                            <div class="col-4  ">
+                                <input type="number" placeholder="3-4 Y" name="kxs" class="col-12">
+                            </div>
+                            <div class="col-4 ">
+                                <input type="text" placeholder="5-6 Y" name="ks" class="col-12">
+                            </div>
+                            <div class="col-4  ">
+                                <input type="text" placeholder="7-8 Y" name="km" class="col-12">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+
+                            <div class="col-4  ">
+                                <input type="text" placeholder="9-10 Y" name="kl" class="col-12">
+                            </div>
+                            <div class="col-4  ">
+                                <input type="text" placeholder="11-12 Y" name="kxl" class="col-12">
+                            </div>
+                            <div class="col-4  ">
+                                <input type="text" placeholder="13-14 Y" name="kxxl" class="col-12">
+                            </div>
+                        </div>
+                    </div>
+</div>
+</td>
+</tr>
+
+
+</table>
+<input type="submit" class="btn btn-primary">
+{{!-- <a class="btn btn-primary" style="background-color: #55acee;" href="#!" role="button">
+    Next
+</a> --}}
+{{!-- <input type="submit" class="btn btn-primary rounded" value="submit"> --}}
+</form>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+<script>
+
+
+    function show() {
+        let x = document.getElementById("g").value
+        let adults = document.getElementById('adults');
+        let kids = document.getElementById("kids");
+        let preview = document.getElementById("preview");
+
+
+        if (x === "men" || x === "women" || x === "menWomen") {
+
+            kids.style.display = 'none'
+            preview.style.display = 'none'
+            adults.style.display = 'block'
+
+        } else {
+            adults.style.display = 'none'
+            kids.style.display = 'block'
+            preview.style.display = 'none'
+
+        }
+        console.log(x)
+    }
+
+
+
+
+</script>

@@ -1,0 +1,56 @@
+<div class="container mt-5 shadow">
+    <table class="table " id="products">
+        {{!-- <caption> users</caption> --}}
+        <thead>
+            <tr>
+                <th scope="col">N0.</th>
+                <th scope="col">Title</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Price</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Category</th>
+                <th scope="'col"> </th>
+                <th scope="'col"></th>
+
+
+                {{!-- <th scope="col">Edit</th> --}}
+                {{!-- <th scope="col">Delete</th>
+                <th scope="col">Action</th> --}}
+
+
+                {{!-- <th scope="col">Description</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                {{!-- <td>{{this.title}}</td> --}}
+                <td> <a href="/sellers/product/view?id={{this._id}}">{{this.title}}</a></td>
+                <td>{{this.brandName}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.gender}}</td>
+                <td>{{this.category}}</td>
+                <td>
+                    {{#if this.isActive}}
+                    <a href="/sellers/product/disable/{{this._id}}" class="text-danger">Disable</a>
+                    {{else}}
+                    <a href="/sellers/product/enable/{{this._id}}" class="text-success">Enable</a>
+                    {{/if}}
+                </td>
+
+
+
+                <td><img src="/product-images/{{this._id}}(1).jpg" alt="image" width="100"></td>
+            </tr>
+
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#products');
+    });
+</script>
